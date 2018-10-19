@@ -16,6 +16,7 @@ class QuestionsController extends Controller
     {
         //\DB::enableQueryLog();
         $questions = Question::with('user')->latest()->paginate(5);
+         //$questions = Question::latest()->paginate(5);
 
         //view('questions.index',compact('questions'))->render();
         return view('questions.index',compact('questions'));
